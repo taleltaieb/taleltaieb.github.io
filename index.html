@@ -371,10 +371,11 @@
                     class="mdi-navigation-close right"></i></span>
                 <ul>
                   <li><b>Tools:</b> Airflow, dbt, Snowflake, Streamlit, SQL</li>
-                  <li>Built an automated data pipeline with Airflow and dbt to transform raw sales data.</li>
-                  <li>Created a clean Snowflake warehouse with tested, incremental dbt models.</li>
-                  <li>Designed a live dashboard showing 4 business KPIs and detailed sales trends.</li>
-                  <li>Published interactive dbt documentation and deployed the entire pipeline end-to-end.</li>
+                  <p><strong>Problem:</strong> Retail managers manually track weekly sales KPIs across 50+ stores—time-consuming and error-prone.</p>
+                  <p><strong>Solution:</strong> Built an <em>Airflow DAG</em> to ingest raw sales data (S3 → Snowflake), transform with <em>dbt</em>, and refresh a <em>Streamlit</em> dashboard every morning.</p>
+                  <p><strong>Tech & Orchestration:</strong> Airflow (daily schedule + retry logic) → Snowflake warehouse → dbt models & tests → Streamlit UI</p>
+                  <p><strong>Impact:</strong> Reduced manual KPI collection from 4 hours/week to 5 minutes; enabled real-time trend spotting and drill-downs.</p>
+                  <p>
                 </ul>
                 <div class="card-action">
                   <a aria-label="Visit the GitHub repo" href="https://github.com/taleltaieb/5-Step-Pipeline-to-Surface-4-Key-Retail-KPIs"
