@@ -675,40 +675,80 @@
   <h3 class="page-title white-text teal">Témoignages</h3>
   <div class="container flow-text">
 
-    <!-- French Version -->
-    <div class="card">
-      <div class="card-content">
-        <p>
-          <em>“J'ai eu le plaisir de travailler avec Talel Taieb au sein de mon équipe de mars 2023 à février 2025. Au cours de ces deux années, Talel a joué un rôle important dans le développement d'outils informatiques sur mesure, ce qui a aidé à rendre notre travail quotidien bien plus efficace.
-          <br><br>
-          Son travail a couvert un large éventail de missions : l'organisation de données, le dashboarding, l'analyse de données en soutien à la prise de décision, et plus récemment, la création de modèles prévisionnels basés sur la donnée pour optimiser l'efficacité de nos processus.
-          <br><br>
-          Au-delà de ses compétences techniques, j'ai particulièrement apprécié son engagement, sa volonté et son grand sérieux dans l'exécution de ses tâches. Il a démontré une grande capacité à prendre en main des projets de manière autonome, en s'assurant de leur bonne réalisation en étroite collaboration avec ses collègues, et toujours en adéquation avec les attentes de ses clients internes.
-          <br><br>
-          Ce fut un réel plaisir de collaborer avec lui. Je le recommande vivement.”</em>
-        </p>
-        <p><strong>— Clément Richard, Manager chez Airbus</strong></p>
-      </div>
+    <!-- Language Toggle -->
+    <div style="text-align: right; margin-bottom: 10px;">
+      <button onclick="showTestimonial('fr')" class="lang-btn" id="btn-fr">🇫🇷 Français</button>
+      <button onclick="showTestimonial('en')" class="lang-btn" id="btn-en">🇬🇧 English</button>
     </div>
 
-    <!-- English Version -->
-    <div class="card">
-      <div class="card-content">
-        <p>
-          <em>“I had the pleasure of working with Talel Taieb in my team from March 2023 to February 2025. Over these two years, Talel played a key role in developing custom data tools that significantly improved our day-to-day efficiency.
-          <br><br>
-          His work covered a wide range of tasks: data organization, dashboarding, analytical support for decision-making, and more recently, the creation of data-driven forecasting models to help optimize our internal processes.
-          <br><br>
-          Beyond his technical skills, I especially appreciated his commitment, motivation, and professionalism. Talel showed strong autonomy in leading projects from start to finish, collaborating effectively with colleagues, and always aligning with internal stakeholders' expectations.
-          <br><br>
-          It was a real pleasure to work with him. I highly recommend him.”</em>
-        </p>
-        <p><strong>— Clément Richard, Manager at Airbus</strong></p>
-      </div>
+    <!-- Testimonial Box -->
+    <div class="testimonial-box z-depth-2" style="padding: 25px; border-radius: 10px; background: #f9f9f9;">
+      <p id="testimonial-text" style="font-style: italic; color: #333; font-size: 1.2rem;">
+        <!-- Initial text will load here -->
+      </p>
+      <p id="testimonial-author" style="text-align: right; margin-top: 15px; font-weight: bold;">
+        <!-- Author will load here -->
+      </p>
     </div>
-
   </div>
 </section>
+
+<!-- Styling -->
+<style>
+  .lang-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #00796b;
+  }
+  .lang-btn.active {
+    text-decoration: underline;
+  }
+</style>
+
+<!-- JavaScript Toggle Logic -->
+<script>
+  const testimonials = {
+    fr: {
+      text: `“J'ai eu le plaisir de travailler avec Talel Taieb au sein de mon équipe de mars 2023 à février 2025. Au cours de ces deux années, Talel a joué un rôle important dans le développement d'outils informatiques sur mesure, ce qui a aidé à rendre notre travail quotidien bien plus efficace.
+
+Son travail a couvert un large éventail de missions : l'organisation de données, le dashboarding, l'analyse de données en soutien à la prise de décision, et plus récemment, la création de modèles prévisionnels basés sur la donnée pour optimiser l'efficacité de nos processus.
+
+Au-delà de ses compétences techniques, j'ai particulièrement apprécié son engagement, sa volonté et son grand sérieux dans l'exécution de ses tâches. Il a démontré une grande capacité à prendre en main des projets de manière autonome, en s'assurant de leur bonne réalisation en étroite collaboration avec ses collègues, et toujours en adéquation avec les attentes de ses clients internes.
+
+Ce fut un réel plaisir de collaborer avec lui. Je le recommande vivement.”`,
+      author: "— Clément Richard, Manager chez Airbus"
+    },
+    en: {
+      text: `“I had the pleasure of working with Talel Taieb in my team from March 2023 to February 2025. Over these two years, Talel played a key role in developing custom data tools that significantly improved our day-to-day efficiency.
+
+His work covered a wide range of tasks: data organization, dashboarding, analytical support for decision-making, and more recently, the creation of data-driven forecasting models to help optimize our internal processes.
+
+Beyond his technical skills, I especially appreciated his commitment, motivation, and professionalism. Talel showed strong autonomy in leading projects from start to finish, collaborating effectively with colleagues, and always aligning with internal stakeholders' expectations.
+
+It was a real pleasure to work with him. I highly recommend him.”`,
+      author: "— Clément Richard, Manager at Airbus"
+    }
+  };
+
+  function showTestimonial(lang) {
+    document.getElementById('testimonial-text').textContent = testimonials[lang].text;
+    document.getElementById('testimonial-author').textContent = testimonials[lang].author;
+
+    // Toggle button styles
+    document.getElementById('btn-fr').classList.remove('active');
+    document.getElementById('btn-en').classList.remove('active');
+    document.getElementById('btn-' + lang).classList.add('active');
+  }
+
+  // Load French by default
+  document.addEventListener("DOMContentLoaded", () => {
+    showTestimonial('fr');
+  });
+</script>
 
 <!-- Seventh Section: Education -->
 <section id="education" class="section scrollspy">
